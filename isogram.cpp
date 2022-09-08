@@ -15,14 +15,17 @@ bool is_isogram(std::string str)
    char arr[size];
    int i,j;
    strcpy(arr,str.c_str());
-   
+   for(i = 0; i < size; i++)              //Remember to convert to lower case
+      {
+         arr[i] = tolower(arr[i]);
+      }
    for(i = 0; i < size; i++)
       {
          if(i > 0)
          {
             for(j = i - 1; j >= 0; j--)
                {
-               if(str[i] == str[j]) return false;
+               if(arr[i] == arr[j]) return false;
                }
          }
       }
