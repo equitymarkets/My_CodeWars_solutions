@@ -12,15 +12,17 @@ The input will be a non-negative integer.
 int digital_root(int n)
    {
       std::vector<int> digits;
-      int count = 0;
       while (n)
          {
             digits.push_back(n % 10);
             n /= 10;
          }
+      int count = 0;
       for(int i = 0; i < size(digits); i++) 
          {
+            
             count = count + digits[i];
          }
-      return count;
+   if((10 - count) <= 0) return digital_root(count);
+   return count;   
    }
