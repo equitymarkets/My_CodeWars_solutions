@@ -5,7 +5,7 @@ Define a function that takes an integer argument and returns a logical value tru
 #include <iostream>
 #include <string.h>
 
-bool isPrime(int num)
+bool isPrime(int num)   //Sieve of Eratosthenes was too slow
   {
     if(num < 2) return false;   //eliminate lower numbers to start higher
     if(num < 4) return true;    //and count by more
