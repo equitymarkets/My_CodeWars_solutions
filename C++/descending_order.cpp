@@ -16,7 +16,6 @@ uint64_t descendingOrder(uint64_t a)
       a /= 10; 
     }
   sort(array.begin(), array.end());
-  //for(int i = 0;)
   int length = size(array);
   unsigned long long mult = 10;
   a = 0; 
