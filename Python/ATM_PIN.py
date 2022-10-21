@@ -13,13 +13,10 @@ import re
 def validate_pin(pin):
     num_validator = "^\\d+$"
     space_check = ' ' in pin
-    if(space_check == True): 
-        return False
     return_check = '\n' in pin      #check for newlines not just spaces!
-    if(return_check == True):
-        return False
     length_str_pin = len(pin)
-    if((length_str_pin == 4 or length_str_pin == 6) and (re.match(num_validator, pin))): 
+    if((length_str_pin == 4 or length_str_pin == 6) and (space_check == False) 
+        and (return_check == False) and (re.match(num_validator, pin))): 
         return True
     else: 
         return False
